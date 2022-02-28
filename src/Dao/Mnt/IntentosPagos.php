@@ -17,7 +17,7 @@ use Dao\Table;
 
 class IntentosPagos extends Table
 {
-    //LISTAR TODOS
+    //LISTAR INTENTOS
     public static function obtenerIntentosPagos()
     {
         $sqlstr = "select * from intentosPagos;";
@@ -37,7 +37,7 @@ class IntentosPagos extends Table
         );
     }
 
-    //AGREGAR
+    //AGREGAR INTENTOS
     public static function nuevoIntentosPagos($fecha, $cliente, $monto, $fechaVenc, $estado)
     {
         $sqlstr= "INSERT INTO intentoPagos (fecha,cliente,monto,fechaVenc,estado) values (:fecha, :cliente, :monto, :fechaVenc, :estado);";
@@ -53,7 +53,7 @@ class IntentosPagos extends Table
         );
     }
 
-    //ACTUALIZAR
+    //ACTUALIZAR INTENTOS
     public static function actualizarIntentosPagos($cliente, $estado, $id)
     {
         $sqlstr = "UPDATE intentoPagos set cliente=:cliente, estado=:estado where id=:id";
@@ -67,7 +67,7 @@ class IntentosPagos extends Table
         );
     }
 
-    //BORRAR
+    //BORRAR INTENTOS
     public static function eliminarIntentosPagos($id)
     {
         $sqlstr = "DELETE FROM intentoPagos where id=:id;";
